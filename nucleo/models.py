@@ -10,7 +10,7 @@ class Cliente(models.Model):
     apellidos=models.CharField(max_length=50)
     direccion=models.CharField(max_length=100)
     fechaNacimiento=models.DateField(blank=False)
-    foto=models.ImageField(max_length=100)
+    foto=models.ImageField(upload_to='photos/')
     idUsuario=models.OneToOneField(User, on_delete=models.CASCADE)
 
     def __str__(self):
@@ -23,7 +23,7 @@ class Especialista(models.Model):
     apellidos=models.CharField(max_length=100)
     direccion=models.CharField(max_length=100)
     fechaNacimiento=models.DateField(blank=False)
-    foto=models.ImageField(max_length=100)
+    foto=models.ImageField(upload_to='photos/')
     biografia=models.CharField(max_length=255)
     idUsuario=models.ForeignKey(User, on_delete=models.CASCADE)
 
@@ -43,7 +43,7 @@ class cita(models.Model):
 
 
 
-class mensajes(models.Model):
+class mensaje(models.Model):
     id_Emisor=models.ForeignKey(User, on_delete=models.CASCADE, related_name='id_Emisor')
     id_Receptor=models.ForeignKey(User, on_delete=models.CASCADE, related_name='id_Receptor')
     fecha=models.DateField(blank=False)
