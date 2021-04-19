@@ -19,6 +19,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATICFILES_DIRS=(
     os.path.join(BASE_DIR, 'static'),
 )
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
@@ -34,6 +35,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'nucleo',
+    
 
     
 

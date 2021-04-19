@@ -20,6 +20,7 @@ from django.conf import settings
 from nucleo import views
 
 urlpatterns = [
+    path('jet', include('jet.urls', 'jet')), 
     path('admin/', admin.site.urls),
     path('', include('nucleo.urls')),
 ]+static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
