@@ -39,8 +39,10 @@ class cita(models.Model):
     realizada=models.BooleanField(default=False)
 
     def __str__(self):
-        return self.idCliente+" "+self.idEspecialista
+        return 'CLIENTE:'+" "+self.idCliente.nombre+" "+'ESPECIALISTA: '+" "+self.idEspecialista.nombre+" "+'FECHA: '+" "+self.fecha.strftime('%Y-%m-%d')
 
+    class Meta:
+        ordering = ['fecha']
 
 
 class mensaje(models.Model):
