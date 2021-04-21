@@ -46,12 +46,12 @@ class cita(models.Model):
 
 
 class mensaje(models.Model):
-    id_Emisor=models.ForeignKey(User, on_delete=models.CASCADE, related_name='id_Emisor')
-    id_Receptor=models.ForeignKey(User, on_delete=models.CASCADE, related_name='id_Receptor')
+    idEmisor=models.ForeignKey(User, on_delete=models.CASCADE, related_name='id_Emisor')
+    idReceptor=models.ForeignKey(User, on_delete=models.CASCADE, related_name='id_Receptor')
     fecha=models.DateField(blank=False)
     asunto=models.CharField(max_length=50)
     texto=models.TextField()
     leido=models.BooleanField(default=False)
 
     def __str__(self):
-        return self.idEmisor+" "+self.idReceptor+" "+self.asunto
+        return self.idEmisor.username+" "+self.idReceptor.username+" "+self.asunto
