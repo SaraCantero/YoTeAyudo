@@ -32,7 +32,20 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Yo Te Ayudo</a>
-      <a class="btn btn-primary" href="#">Iniciar Sesión</a>
+      {% if not request.user.is_authenticated %}
+      <li class="nav-item">
+      <a class="nav-link" href="{% url 'login' %}">Iniciar Sesión</a>
+      </li>
+     <li class="nav-item">
+      <a class="nav-link" href="{% url 'registro' %}">Registro</a>
+      </li> 
+      {%else%}
+      <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">Salir</a>
+      </li>
+      {%endif%}
+
+
     </div>
   </nav>
 

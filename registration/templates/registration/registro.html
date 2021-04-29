@@ -1,0 +1,16 @@
+<div class="container">
+<br/>
+<div class="panel panel-default">
+<div class="panel-heading">
+<form action=" " method="POST">
+{% csrf_token %}
+{{form.as_p}}
+{% if 'register' in request.GET %}
+<p style="color:green">Usuario registrado correctamente</p>
+{%endif%}
+<p>
+<input type="submit" class="btn btn-primary btn-block" value="Confirmar"/>
+</form>
+</div>
+
+</div>
