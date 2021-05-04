@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap"/>
+
+<title>yo_te_Ayudo</title>
+</head>
+<body>
+<div class="jumbotron">
+    <div class="container text-center">
+
+    <h1>Yo te ayudo</h1>
+    {%load static%}
+    <img src="{% static 'img/logo.jpg'%}"/>
+    </div>
+    </div>
+
+<div class="container">
+    <br/>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        <form action="" method="POST">
+        {%csrf_token%}
+        <h3 class="mb-4"> Iniciar sesión </h3>
+        {% if form.non_field_errors %}
+        <p style="color: red"> Datos incorrectos </p>
+        {%endif%}
+        <p>
+        <input type="text" name="username" autofocus required id="id_username"
+        class="form-control"/>
+        </p>
+        <p>
+        <input type="password" name="password" required id="id_password"
+        class="form-control"/>
+        </p>
+    <p>
+        <input type="submit" class="btn btn-primary btn-block" value="Entrar"/>
+    </p>
+</form>
+</div>
+</div>
+</div>
+</head>
+</html>
+
