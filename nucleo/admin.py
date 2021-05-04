@@ -18,9 +18,6 @@ class CitaAdmin(admin.ModelAdmin):
     list_filter = ('realizada' , 'fecha')
     
 
-
-
-
 @admin.register(mensaje)
 class MensajeAdmin(admin.ModelAdmin):
     list_display = ('idEmisor', 'idReceptor', 'fecha','asunto','leido')
